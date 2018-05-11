@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "reviews": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "author",
+          "score",
+          "date",
+          "title",
+          "text",
+          "rev_url",
+          "name",
+          "type",
+          "subtype",
+          "street",
+          "postal",
+          "city",
+          "country",
+          "telephone",
+          "features",
+          "restaurant_url",
+          "ranking"
+        ],
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "date": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "response": {},
+          "rev_value": {},
+          "rev_service": {},
+          "rev_food": {},
+          "rev_url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "subtype": {
+            "type": "string"
+          },
+          "street": {
+            "type": "string",
+            "minLength": 1
+          },
+          "postal": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string",
+            "minLength": 1
+          },
+          "country": {
+            "type": "string",
+            "minLength": 1
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "email": {},
+          "features": {
+            "type": "string"
+          },
+          "restaurant_url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ranking": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "did": {
+      "type": "object",
+      "properties": {
+        "@context": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publicKey": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "id",
+              "type",
+              "owner",
+              "publicKeyBase58"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "owner": {
+                "type": "string",
+                "minLength": 1
+              },
+              "publicKeyBase58": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "authentication": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "type",
+              "publicKey"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "publicKey": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "@context",
+        "id",
+        "publicKey",
+        "authentication"
+      ]
+    }
+  },
+  "required": [
+    "reviews",
+    "did"
+  ]
+}

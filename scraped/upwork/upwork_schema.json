@@ -1,0 +1,416 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "assignmentsInProgress": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "startedOn",
+          "totalHours",
+          "type",
+          "title",
+          "description",
+          "clientId",
+          "isPrivate",
+          "hoursPerWeek",
+          "openingRid",
+          "id",
+          "isEdc",
+          "ciphertext",
+          "isPtc",
+          "isOpeningVisible",
+          "accessType",
+          "openingHidden"
+        ],
+        "properties": {
+          "startedOn": {
+            "type": "string",
+            "minLength": 1
+          },
+          "endedOn": {},
+          "totalCharges": {
+            "type": "object",
+            "properties": {
+              "currencyCode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "amount": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "currencyCode",
+              "amount"
+            ]
+          },
+          "totalHours": {
+            "type": "number"
+          },
+          "hourlyRate": {
+            "type": "object",
+            "properties": {
+              "currencyCode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "amount": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "currencyCode",
+              "amount"
+            ]
+          },
+          "type": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "feedback": {},
+          "linkedPortfolio": {},
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "clientId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "isPrivate": {
+            "type": "boolean"
+          },
+          "agencyName": {},
+          "status": {},
+          "initialAmount": {
+            "type": "object",
+            "properties": {
+              "currencyCode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "amount": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "currencyCode",
+              "amount"
+            ]
+          },
+          "hoursPerWeek": {
+            "type": "number"
+          },
+          "openingRid": {
+            "type": "string",
+            "minLength": 1
+          },
+          "skills": {},
+          "totalEarnings": {},
+          "blendedChargeRate": {},
+          "blendedEarnRate": {},
+          "feedbackGiven": {},
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "isEdc": {
+            "type": "boolean"
+          },
+          "ciphertext": {
+            "type": "string",
+            "minLength": 1
+          },
+          "isPtc": {
+            "type": "boolean"
+          },
+          "isOpeningVisible": {
+            "type": "boolean"
+          },
+          "accessType": {
+            "type": "number"
+          },
+          "openingHidden": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "assignmentsEnded": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "type": "number"
+        },
+        "itemsPerPage": {
+          "type": "number"
+        },
+        "totalItems": {
+          "type": "number"
+        },
+        "sortOrder": {
+          "type": "number"
+        },
+        "assignments": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "startedOn",
+              "endedOn",
+              "totalHours",
+              "type",
+              "title",
+              "description",
+              "clientId",
+              "isPrivate",
+              "hoursPerWeek",
+              "openingRid",
+              "id",
+              "isEdc",
+              "ciphertext",
+              "isPtc",
+              "isOpeningVisible",
+              "accessType",
+              "openingHidden"
+            ],
+            "properties": {
+              "startedOn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "endedOn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "totalCharges": {
+                "type": "object",
+                "properties": {
+                  "currencyCode": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "amount": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "currencyCode",
+                  "amount"
+                ]
+              },
+              "totalHours": {
+                "type": "number"
+              },
+              "hourlyRate": {
+                "type": "object",
+                "properties": {
+                  "currencyCode": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "amount": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "currencyCode",
+                  "amount"
+                ]
+              },
+              "type": {
+                "type": "number"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "feedback": {
+                "type": "object",
+                "properties": {
+                  "score": {
+                    "type": "number"
+                  },
+                  "comment": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "commentIsPublic": {
+                    "type": "boolean"
+                  },
+                  "response": {},
+                  "scoreDetails": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "minItems": 1,
+                    "items": {
+                      "required": [
+                        "score",
+                        "label",
+                        "description"
+                      ],
+                      "properties": {
+                        "score": {
+                          "type": "number"
+                        },
+                        "label": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "description": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "score",
+                  "comment",
+                  "commentIsPublic",
+                  "scoreDetails"
+                ]
+              },
+              "linkedPortfolio": {},
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "clientId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "isPrivate": {
+                "type": "boolean"
+              },
+              "agencyName": {},
+              "status": {},
+              "initialAmount": {
+                "type": "object",
+                "properties": {
+                  "currencyCode": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "amount": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "currencyCode",
+                  "amount"
+                ]
+              },
+              "hoursPerWeek": {
+                "type": "number"
+              },
+              "openingRid": {
+                "type": "string",
+                "minLength": 1
+              },
+              "skills": {},
+              "totalEarnings": {},
+              "blendedChargeRate": {},
+              "blendedEarnRate": {},
+              "feedbackGiven": {
+                "type": "object",
+                "properties": {
+                  "score": {
+                    "type": "number"
+                  },
+                  "comment": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "commentIsPublic": {
+                    "type": "boolean"
+                  },
+                  "response": {},
+                  "scoreDetails": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "minItems": 1,
+                    "items": {
+                      "required": [
+                        "score",
+                        "label",
+                        "description"
+                      ],
+                      "properties": {
+                        "score": {
+                          "type": "number"
+                        },
+                        "label": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "description": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "score",
+                  "comment",
+                  "commentIsPublic",
+                  "scoreDetails"
+                ]
+              },
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "isEdc": {
+                "type": "boolean"
+              },
+              "ciphertext": {
+                "type": "string",
+                "minLength": 1
+              },
+              "isPtc": {
+                "type": "boolean"
+              },
+              "isOpeningVisible": {
+                "type": "boolean"
+              },
+              "accessType": {
+                "type": "number"
+              },
+              "openingHidden": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "filterClientAssignments": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "pageNumber",
+        "itemsPerPage",
+        "totalItems",
+        "sortOrder",
+        "assignments",
+        "filterClientAssignments"
+      ]
+    },
+    "assignmentsSelected": {}
+  },
+  "required": [
+    "assignmentsInProgress",
+    "assignmentsEnded"
+  ]
+}

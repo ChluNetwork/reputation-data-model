@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "reviews": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "name",
+          "address",
+          "longitude",
+          "latitude",
+          "webpage",
+          "price_range",
+          "restaurant_url",
+          "rev_url",
+          "author",
+          "description",
+          "datePublished",
+          "ratingValue"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "address": {
+            "type": "string",
+            "minLength": 1
+          },
+          "longitude": {
+            "type": "number"
+          },
+          "latitude": {
+            "type": "number"
+          },
+          "types": {
+            "type": "array",
+            "items": {
+              "required": [],
+              "properties": {}
+            }
+          },
+          "webpage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "price_range": {
+            "type": "number"
+          },
+          "restaurant_url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rev_url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "author": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "datePublished": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ratingValue": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "did": {
+      "type": "object",
+      "properties": {
+        "@context": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publicKey": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "id",
+              "type",
+              "owner",
+              "publicKeyBase58"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "owner": {
+                "type": "string",
+                "minLength": 1
+              },
+              "publicKeyBase58": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "authentication": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "type",
+              "publicKey"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "publicKey": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "@context",
+        "id",
+        "publicKey",
+        "authentication"
+      ]
+    }
+  },
+  "required": [
+    "reviews",
+    "did"
+  ]
+}

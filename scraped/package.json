@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "json-schema-generator": "2.0.6",
+    "lodash": "4.17.10"
+  }
+}
